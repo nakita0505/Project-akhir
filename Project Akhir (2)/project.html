@@ -110,19 +110,19 @@
                        <th scope="row">1</th>
                        <td>Teknologi Informasi</td>
                        <td>27 Mei 2022</td>
-                       <td>Menampilkan teknoligi informasi terbaru</td>
+                       <td>Menampilkan teknologi informasi terbaru</td>
                      </tr>
                      <tr>
                        <th scope="row">2</th>
                        <td>Teknologi Komunikasi</td>
                        <td>28 mei 2022</td>
-                       <td>Menampilkan teknoligi komunikasi terbar</td>
+                       <td>Menampilkan teknologi komunikasi terbaru</td>
                      </tr>
                      <tr>
                        <th scope="row">3</th>
                        <td >Teknologi Transportasi</td>
                        <td>29 mei 2022</td>
-                       <td>Menampilkan teknoligi transportasi terbar</td>
+                       <td>Menampilkan teknologi transportasi terbaru</td>
                      </tr>
                    </tbody>
                  </table>
@@ -229,24 +229,26 @@
        
             <h3 class="fw-bold display-5 mb-4 text-center pb-4" style="color:#2b1700;" >Form Registrasi</h3> 
 
+            <div id="error"></div>
+
             <div class="mb-3">
                 <label for="Nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="nama" name="nama">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
               </div>           
 
               <div class="mb-3">
                 <label for="nomorTelepon" class="nomorTelepon">Nomor Telepon</label>
-                <input type="tel" class="form-control" id="nomorTelepon" aria-describedby="telHelp">
+                <input type="tel" class="form-control" id="nomorTelepon" aria-describedby="telHelp" name="nomorTelepon">
               </div>     
 
              
             <div class="mb-3">
               <label for="acara" class="form-label">Event</label>
-              <select id="acara" class="form-select">
+              <select id="acara" class="form-select" name="acara">
                 
                       <option value='acara1'>Event 1</option>
                       <option value='acara2'>Event 2</option>
@@ -256,8 +258,8 @@
                       
           <div class="mb-3">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                <label class="form-check-label" for="exampleCheck1">Apakah anda yakin untuk mendaftar?</label>
+                <input type="checkbox" class="form-check-input" id="checkbox" />
+                <label class="form-check-label" for="checkbox" name="checkbox">Apakah anda yakin untuk mendaftar?</label>
               </label>
             </div>
           </div>

@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 let database = firebase.database().ref("registrasi");
 
 // gunakan!
-const section = document.querySelector("form");
+const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -26,10 +26,43 @@ form.addEventListener("submit", function (event) {
   const acara = document.querySelector("#acara").value;
 
   let newContact = database.push();
-  newContact.set({
-    namaContact: nama,
-    emailContact: email,
-    nomorTeleponContact: nomorTelepon,
-    acaraContact: acara,
-  });
+  newContact
+    .set({
+      namaContact: nama,
+      emailContact: email,
+      nomorTeleponContact: nomorTelepon,
+      acaraContact: acara,
+    })
+
+    .then(() => {
+      console.log("Data saved");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  //alret
+  alert("Your Form Has Been submitted Succesfully");
+});
+
+// Validation
+const nama = document.getElementById("nama");
+const nomorTelepon = document.getElementById("nomorTelepon");
+
+const errorElement = document.getElementById("error");
+
+form.addEventListener("submit", function (event) {
+  let messages = [];
+  if (nama.value === " " || nama.value == null) {
+    messages.push("Name is required");
+  }
+
+  if (nomorTelepon.value.length >= 14) {
+    messages.push("karakter tidak boleh 14");
+  }
+
+  if (messages.length > 0) {
+    e.preventDefault();
+    errorElement.innerText = messages.join(", ");
+  }
 });
